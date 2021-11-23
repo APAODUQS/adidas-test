@@ -10,7 +10,7 @@ modern web application, and you must automate the following scenario:
 * Close the window and add the product to your wish list
 * Navigate to the wish list and give a click in “Iniciar session”
 * Enter the data to login and verify that you are logged correctly, and you still have the product in your wish list.
-* 
+
 **Note**: If you go to the trends section and ultraboost is not present, select another trend.
 
 ### Run test
