@@ -15,5 +15,5 @@ modern web application, and you must automate the following scenario:
 
 ### Run test
 ```
-mvn -f functional-test test
+
 ```
