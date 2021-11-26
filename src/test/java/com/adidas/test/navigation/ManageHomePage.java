@@ -2,8 +2,7 @@ package com.adidas.test.navigation;
 
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Open;
+import net.serenitybdd.screenplay.actions.*;
 
 public class ManageHomePage {
 

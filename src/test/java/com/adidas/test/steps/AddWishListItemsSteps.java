@@ -1,8 +1,10 @@
 package com.adidas.test.steps;
 
+import com.adidas.test.items.ItemPage;
 import com.adidas.test.navigation.ManageHomePage;
 import io.cucumber.java.en.*;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.ensure.Ensure;
 
 public class AddWishListItemsSteps {
 
@@ -21,6 +23,7 @@ public class AddWishListItemsSteps {
     @And("{actor} can see the page selected with the {}")
     public void viewPageSelected(Actor actor, String page) {
         System.out.println(actor + " can see the page selected with the " + page);
+        actor.attemptsTo(Ensure.that(ItemPage.TITLE_ITEM).text().containsIgnoringCase(page));
     }
 
     @And("{actor} goes to {}")
@@ -35,11 +38,6 @@ public class AddWishListItemsSteps {
 
     @And("{actor} closes the window and add the product to his wish list")
     public void addItemWishList(Actor actor) {
-        System.out.println("HELLO");
-    }
-
-    @When("{actor} navigates to the wish list")
-    public void goToTheWishList(Actor actor) {
         System.out.println("HELLO");
     }
 

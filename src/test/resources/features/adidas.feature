@@ -9,7 +9,7 @@ Feature: Add items to the wish list from the adidas page
     And user goes to Size Guides
     And user can see the size <size> cm value in the table
     And user closes the window and add the product to his wish list
-    When user navigates to the wish list
+    When user goes to Wish List
     And user goes to Login
     And user enters the data to login
     Then user is logged correctly
