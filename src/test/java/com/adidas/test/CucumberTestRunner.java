@@ -1,4 +1,4 @@
-package com.adidas.test.setup;
+package com.adidas.test;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
