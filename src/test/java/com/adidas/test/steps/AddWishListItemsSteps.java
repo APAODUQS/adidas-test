@@ -1,5 +1,6 @@
 package com.adidas.test.steps;
 
+import com.adidas.test.navigation.ManageHomePage;
 import io.cucumber.java.en.*;
 import net.serenitybdd.screenplay.Actor;
 
@@ -8,21 +9,18 @@ public class AddWishListItemsSteps {
     @Given("{actor} navigate to the Adidas Page")
     public void navigateURL(Actor actor) {
         System.out.println(actor + " navigate to the Adidas Page ");
-    }
-
-    @Given("{actor} clicks the section: {}")
-    public void goSection(Actor actor, String section) {
-        System.out.println(actor + " goes to the “" + section + "” section");
+        actor.wasAbleTo(ManageHomePage.goAdidasPage());
     }
 
     @And("{actor} selects {}")
     public void selectItem(Actor actor, String item) {
-        System.out.println("HELLO");
+        System.out.println(actor + " selects " + item);
+        actor.attemptsTo(ManageHomePage.selectFromHomePage(item));
     }
 
     @And("{actor} can see the page selected with the {}")
     public void viewPageSelected(Actor actor, String page) {
-        System.out.println("HELLO");
+        System.out.println(actor + " can see the page selected with the " + page);
     }
 
     @And("{actor} goes to {}")
