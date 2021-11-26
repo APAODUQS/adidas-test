@@ -3,6 +3,7 @@ package com.adidas.test.steps;
 import com.adidas.test.items.ItemPage;
 import com.adidas.test.items.ManageItems;
 import com.adidas.test.navigation.ManageHomePage;
+import com.adidas.test.wishlist.ManageWishList;
 import io.cucumber.java.en.*;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.ensure.Ensure;
@@ -50,6 +51,12 @@ public class AddWishListItemsSteps {
     public void addItemWishList(Actor actor, String element) {
         System.out.println(actor + " adds the " + element);
         actor.attemptsTo(ManageItems.selectFromItem(element));
+    }
+
+    @And("{actor} logins from the Wish List")
+    public void userLogins(Actor actor) {
+        System.out.println(actor + " logins from the Wish List ");
+        actor.attemptsTo(ManageWishList.loginFromWishList());
     }
 
     @And("{actor} enters the data to login")

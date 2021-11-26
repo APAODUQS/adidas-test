@@ -11,7 +11,7 @@ Feature: Add items to the wish list from the adidas page
     And user closes the window
     And user adds the item to Wish List
     When user goes to Wish List
-    And user goes to Login
+    And user logins from the Wish List
     And user enters the data to login
     Then user is logged correctly
     And user can see the product in his wish list
