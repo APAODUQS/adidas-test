@@ -14,7 +14,7 @@ Feature: Add items to the wish list from the adidas page
     And user logins from the Wish List
     And user enters the data to login
     Then user is logged correctly
-    And user can see the product in his wish list
+    And user can see the product <selection> in his wish list
     Examples:
-      | selection  | size |
-      | Ultraboost | 28.8 cm|
+      | selection  | size    |
+      | Ultraboost | 28.8 cm |
