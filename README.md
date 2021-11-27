@@ -14,6 +14,7 @@ modern web application, and you must automate the following scenario:
 **Note**: If you go to the trends section and ultraboost is not present, select another trend.
 
 ### Run test
+Requirements: Chrome
 ```
 mvn clean verify
 ```

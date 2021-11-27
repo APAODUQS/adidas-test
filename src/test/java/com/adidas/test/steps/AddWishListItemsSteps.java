@@ -1,8 +1,8 @@
 package com.adidas.test.steps;
 
-import com.adidas.test.data.DataUser;
 import com.adidas.test.items.ItemPage;
 import com.adidas.test.items.ManageItems;
+import com.adidas.test.login.LoginPage;
 import com.adidas.test.login.ManageLogin;
 import com.adidas.test.navigation.ManageHomePage;
 import com.adidas.test.wishlist.ManageWishList;
@@ -10,6 +10,9 @@ import com.adidas.test.wishlist.WishListPage;
 import io.cucumber.java.en.*;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.waits.WaitUntil;
+
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
 
 public class AddWishListItemsSteps {
 
@@ -55,14 +58,15 @@ public class AddWishListItemsSteps {
     }
 
     @And("{actor} enters the data to login")
-    public void login(Actor actor) {
-        actor.attemptsTo(ManageLogin.enterEmail(DataUser.USER_EMAIL));
-        actor.attemptsTo(ManageLogin.enterPW(DataUser.USER_PW));
+    public void login(Actor actor) throws InterruptedException {
+        actor.attemptsTo(ManageLogin.login());
+        Thread.sleep(1000);
+        actor.attemptsTo(ManageLogin.clickLoginButton());
     }
 
     @Then("{actor} is logged correctly")
     public void verifyLoggedCorrectly(Actor actor) {
-        actor.attemptsTo(ManageLogin.clickLoginButton());
+        actor.attemptsTo(WaitUntil.the(LoginPage.LOGIN_WINDOW, isNotVisible()).forNoMoreThan(10).seconds());
         actor.attemptsTo(Ensure.that(WishListPage.LOGIN_PANEL).isNotDisplayed());
     }
 
