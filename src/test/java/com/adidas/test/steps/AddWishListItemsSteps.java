@@ -72,7 +72,7 @@ public class AddWishListItemsSteps {
 
     @And("{actor} can see the product {} in his wish list")
     public void verifyWishList(Actor actor, String product) {
-        actor.attemptsTo(Ensure.that(WishListPage.DESCRIPTION_ITEM).text().contains(product));
+        actor.attemptsTo(Ensure.that(WishListPage.DESCRIPTION_ITEM).text().containsIgnoringCase(product));
     }
 
 }

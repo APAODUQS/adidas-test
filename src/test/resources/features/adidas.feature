@@ -16,5 +16,5 @@ Feature: Add items to the wish list from the adidas page
     Then user is logged correctly
     And user can see the product <selection> in his wish list
     Examples:
-      | selection  | size    |
-      | Ultraboost | 28.8 cm |
+      | selection     | size    |
+      | ULTRABOOST 21 | 28.8 cm |
